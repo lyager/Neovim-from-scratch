@@ -6,9 +6,9 @@ local term_opts = { silent = true }
 local keymap = vim.keymap.set
 
 --Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+keymap("", ";", "<Nop>", opts)
+vim.g.mapleader = ";"
+vim.g.maplocalleader = ";"
 
 -- Modes
 --   normal_mode = "n",
@@ -60,6 +60,11 @@ keymap("x", "J", ":m '>+1<CR>gv=gv", opts)
 keymap("x", "K", ":m '<-2<CR>gv=gv", opts)
 keymap("x", "<A-j>", ":m '>+1<CR>gv=gv", opts)
 keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)
+
+--- FZF
+keymap("", "<leader>f", ":Files<CR>", opts)
+keymap("", "<leader>FH", ":History<CR>", opts)
+keymap("", "<leader>FB", ":Buffers<CR>", opts)
 
 -- Terminal --
 -- Better terminal navigation
