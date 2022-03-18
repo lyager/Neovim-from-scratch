@@ -65,6 +65,7 @@ keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 keymap("", "<leader>f", ":Files<CR>", opts)
 keymap("", "<leader>FH", ":History<CR>", opts)
 keymap("", "<leader>FB", ":Buffers<CR>", opts)
+keymap("", "<leader>FG", ":Rg<CR>", opts)
 
 -- Terminal --
 -- Better terminal navigation
