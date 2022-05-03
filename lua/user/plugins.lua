@@ -64,7 +64,7 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "kyazdani42/nvim-web-devicons"
   -- use "kyazdani42/nvim-tree.lua"
-  use "akinsho/bufferline.nvim" -- Buffers as tabs in the top?
+  -- use "akinsho/bufferline.nvim" -- Buffers as tabs in the top?
   use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
   --use "akinsho/toggleterm.nvim"
