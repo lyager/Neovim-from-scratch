@@ -62,11 +62,11 @@ keymap("x", "<A-j>", ":m '>+1<CR>gv=gv", opts)
 keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 
 --- FZF
-keymap("", "<leader>f", ":Files<CR>", opts)
-keymap("", "<leader>FH", ":History<CR>", opts)
-keymap("", "<leader>FB", ":Buffers<CR>", opts)
-keymap("", "<leader>FG", ":Rg<CR>", opts)
-keymap("", "<leader>gg", ":Rg <c-r><c-w><CR>", opts)
+--keymap("", "<leader>f", ":Files<CR>", opts)
+--keymap("", "<leader>FH", ":History<CR>", opts)
+--keymap("", "<leader>FB", ":Buffers<CR>", opts)
+--keymap("", "<leader>FG", ":Rg<CR>", opts)
+--keymap("", "<leader>gg", ":Rg <c-r><c-w><CR>", opts)
 
 -- Terminal --
 -- Better terminal navigation
