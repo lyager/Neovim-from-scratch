@@ -37,7 +37,8 @@ local options = {
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
   whichwrap = "bs<>[]hl",                  -- which "horizontal" keys are allowed to travel to prev/next line
   foldmethod = 'expr',                     -- Set default foldmethod
-  foldexpr = 'nvim_treesitter#foldexpr()'
+  foldexpr = 'nvim_treesitter#foldexpr()',
+  foldlevel = 99                           -- - foldlevel default: open
 }
 
 for k, v in pairs(options) do
