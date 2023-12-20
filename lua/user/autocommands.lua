@@ -3,6 +3,7 @@ vim.cmd [[
     autocmd!
     autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR> 
     autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 expandtab
+    autocmd FileType python setlocal ts=4 sw=4 et
     autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'Visual', timeout = 200}) 
     autocmd BufWinEnter * :set formatoptions-=cro
     autocmd FileType qf set nobuflisted
