@@ -80,7 +80,7 @@ return packer.startup(function(use)
   use { "rafamadriz/friendly-snippets", commit = "2be79d8a9b03d4175ba6b3d14b082680de1b31b1" } -- a bunch of snippets to use
   use {  "danymat/neogen"  } -- Your Annnotation Toolkit
 	-- LSP
-	use { "neovim/nvim-lspconfig", commit = "f11fdff7e8b5b415e5ef1837bdcdd37ea6764dda" } -- enable LSP
+	use { "neovim/nvim-lspconfig"} -- enable LSP
   use { "williamboman/mason.nvim"} -- simple to use language server installer
   use { "williamboman/mason-lspconfig.nvim"}
 	use { "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" } -- for formatters and linters
