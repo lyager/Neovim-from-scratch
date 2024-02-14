@@ -8,5 +8,6 @@ copilot.setup({
 	panel = { enabled = false },
 	filetypes = {
 		yaml = true,
+		markdown = true,
 	},
 })
