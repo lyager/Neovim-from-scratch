@@ -80,6 +80,8 @@ return packer.startup(function(use)
 	use({ "lunarvim/darkplus.nvim" })
 	use({ "lifepillar/vim-solarized8" })
 	use({ "catppuccin/vim" })
+	use({ "decaycs/decay.nvim", as = "decay" })
+	use({ "navarasu/onedark.nvim", as = "onedark" })
 
 	-- Cmp
 	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin

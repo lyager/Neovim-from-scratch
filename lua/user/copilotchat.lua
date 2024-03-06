@@ -7,7 +7,7 @@ local select = require("CopilotChat.select")
 local chat = require("CopilotChat.chat")
 
 copilot_chat.setup({
-	debug = true,
-	trace = true,
+	debug = false,
+	trace = false,
 	selection = select.unnamed,
 })
