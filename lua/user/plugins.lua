@@ -57,8 +57,7 @@ return packer.startup(function(use)
 	use({ "goolord/alpha-nvim" })
 	use({ "folke/which-key.nvim" })
 
-	-- My plugins here
-	--use({ "github/copilot.vim" })
+	-- Copilot
 	use({ "zbirenbaum/copilot.lua" })
 	use({
 		"zbirenbaum/copilot-cmp",
@@ -105,6 +104,9 @@ return packer.startup(function(use)
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" })
+
+	-- Outline
+	use({ "hedyhli/outline.nvim" })
 
 	-- Treesitter
 	use({
