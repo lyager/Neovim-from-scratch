@@ -25,8 +25,8 @@ local settings = {
 require("mason").setup(settings)
 local status_malsp_ok, malsp = pcall(require, "mason-lspconfig")
 if not status_malsp_ok then
-    vim.notify("mason-lspconfig not found")
-    return
+	vim.notify("mason-lspconfig not found")
+	return
 end
 
 malsp.setup({
