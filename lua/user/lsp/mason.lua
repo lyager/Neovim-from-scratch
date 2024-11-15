@@ -55,6 +55,7 @@ function printTable(t, indent)
 	end
 end
 
+-- The interfaces to servers are controlled by nvim-lspconfig (path: .local/share/nvim/site/pack/packer/start/nvim-lspconfig)
 for _, server in pairs(malsp.get_installed_servers()) do
 	opts = {
 		on_attach = require("user.lsp.handlers").on_attach,
