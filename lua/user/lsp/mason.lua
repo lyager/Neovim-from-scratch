@@ -41,6 +41,20 @@ end
 
 local opts = {}
 
+function printTable(t, indent)
+	indent = indent or ""
+
+	for key, value in pairs(t) do
+		if type(value) == "table" then
+			print(indent .. tostring(key) .. " = {")
+			printTable(value, indent .. "    ")
+			print(indent .. "}")
+		else
+			print(indent .. tostring(key) .. " = " .. tostring(value))
+		end
+	end
+end
+
 for _, server in pairs(malsp.get_installed_servers()) do
 	opts = {
 		on_attach = require("user.lsp.handlers").on_attach,
@@ -54,5 +68,6 @@ for _, server in pairs(malsp.get_installed_servers()) do
 		opts = vim.tbl_deep_extend("force", conf_opts, opts)
 	end
 
+	--printTable(server)
 	lspconfig[server].setup(opts)
 end
