@@ -68,7 +68,7 @@ return packer.startup(function(use)
 	})
 	use({
 		"CopilotC-Nvim/CopilotChat.nvim",
-		branch = "canary",
+		branch = "main",
 	})
 
 	-- Might conflict with which-key?

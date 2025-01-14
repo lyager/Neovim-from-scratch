@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 local select = require("CopilotChat.select")
-local chat = require("CopilotChat.chat")
+--local chat = require("CopilotChat.chat")
 
 copilot_chat.setup({
 	debug = false,
