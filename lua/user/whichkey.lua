@@ -87,6 +87,13 @@ local mappings = {
 		remap = false,
 	},
 	{
+		"<leader>FH",
+		"<cmd>History:<cr>",
+		desc = "Search command history",
+		nowait = true,
+		remap = false,
+	},
+	{
 		"<leader>P",
 		"<cmd>lua require('telescope').extensions.projects.projects()<cr>",
 		desc = "Projects",
