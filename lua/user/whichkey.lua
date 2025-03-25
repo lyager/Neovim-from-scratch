@@ -516,7 +516,7 @@ local mappings = {
 		remap = false,
 	},
 	{
-		"<leader>ct",
+		"<leader>cc",
 		"<cmd>CopilotChatToggle<cr>",
 		desc = "CopilotChatToggle",
 		nowait = true,
