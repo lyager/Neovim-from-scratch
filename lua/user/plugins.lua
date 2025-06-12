@@ -102,7 +102,7 @@ return packer.startup(function(use)
     use({ "williamboman/mason-lspconfig.nvim", branch = "v1.x" })
     --use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
     use({ "nvimtools/none-ls.nvim" }) -- for formatters and linters
-    use({ "RRethy/vim-illuminate" })
+    -- use({ "RRethy/vim-illuminate" })
 
     -- Telescope
     use({ "nvim-telescope/telescope.nvim", tag = "0.1.8" })
