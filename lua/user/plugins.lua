@@ -93,13 +93,13 @@ return packer.startup(function(use)
     --use({ "hrsh7th/cmp-copilot" })
 
     -- Snippets
-    use({ "L3MON4D3/LuaSnip" })                         --snippet engine
-    use({ "rafamadriz/friendly-snippets" })             -- a bunch of snippets to use
-    use({ "danymat/neogen" })                           -- Your Annnotation Toolkit
+    use({ "L3MON4D3/LuaSnip" })                        --snippet engine
+    use({ "rafamadriz/friendly-snippets" })            -- a bunch of snippets to use
+    use({ "danymat/neogen" })                          -- Your Annnotation Toolkit
     -- LSP
-    use({ "neovim/nvim-lspconfig" })                    -- enable LSP
-    use({ "williamboman/mason.nvim", branch = "v1.x" }) -- simple to use language server installer
-    use({ "williamboman/mason-lspconfig.nvim", branch = "v1.x" })
+    use({ "neovim/nvim-lspconfig" })                   -- enable LSP
+    use({ "williamboman/mason.nvim", tag = "v2.0.0" }) -- simple to use language server installer
+    use({ "williamboman/mason-lspconfig.nvim", tag = "v2.0.0" })
     --use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
     use({ "nvimtools/none-ls.nvim" }) -- for formatters and linters
     -- use({ "RRethy/vim-illuminate" })
