@@ -113,7 +113,6 @@ return packer.startup(function(use)
     -- Treesitter
     use({
         "nvim-treesitter/nvim-treesitter",
-        commit = "v0.9.2",
     })
 
     -- fzf
