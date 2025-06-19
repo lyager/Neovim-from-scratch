@@ -32,7 +32,7 @@ end
 
 malsp.setup({
     ensure_installed = servers,
-    automatic_installation = true,
+    automatic_enable = true,
 })
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
