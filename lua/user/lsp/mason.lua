@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 local servers = {
     "lua_ls",
     -- "cssls",
@@ -62,13 +63,13 @@ for _, server in pairs(malsp.get_installed_servers()) do
         capabilities = require("user.lsp.handlers").capabilities,
     }
 
-    server = vim.split(server, "@")[1]
+    -- server = vim.split(server, "@")[1]
 
     local require_ok, conf_opts = pcall(require, "user.lsp.settings." .. server)
     if require_ok then
         opts = vim.tbl_deep_extend("force", conf_opts, opts)
     end
 
-    --printTable(lspconfig)
+    -- printTable(lspconfig)
     lspconfig[server].setup(opts)
 end

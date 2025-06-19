@@ -5,6 +5,6 @@ if not status_ok then
 end
 
 vim.lsp.set_log_level("warn")
-require("user.lsp.mason")
 require("user.lsp.handlers").setup()
-require("user.lsp.none-ls")
+require("user.lsp.mason")
+-- require("user.lsp.none-ls")

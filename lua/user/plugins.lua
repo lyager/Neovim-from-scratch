@@ -71,9 +71,6 @@ return packer.startup(function(use)
         tag = "v3.12.0"
     })
 
-    -- Might conflict with which-key?
-    --use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-
     -- Colorschemes
     use({ "SyedFasiuddin/theme-toggle-nvim" })
     use({ "folke/tokyonight.nvim" })
@@ -100,9 +97,7 @@ return packer.startup(function(use)
     use({ "neovim/nvim-lspconfig" })                   -- enable LSP
     use({ "williamboman/mason.nvim", tag = "v2.0.0" }) -- simple to use language server installer
     use({ "williamboman/mason-lspconfig.nvim", tag = "v2.0.0" })
-    --use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
-    use({ "nvimtools/none-ls.nvim" }) -- for formatters and linters
-    -- use({ "RRethy/vim-illuminate" })
+    use({ "nvimtools/none-ls.nvim" })                  -- for formatters and linters
 
     -- Telescope
     use({ "nvim-telescope/telescope.nvim", tag = "0.1.8" })
