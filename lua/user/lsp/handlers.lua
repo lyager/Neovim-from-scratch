@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 local M = {}
 
 local status_cmp_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
@@ -25,7 +26,7 @@ M.setup = function()
     local config = {
         virtual_text = false, -- disable virtual text
         signs = {
-            active = signs, -- show signs
+            active = signs,   -- show signs
         },
         update_in_insert = true,
         underline = true,
@@ -52,40 +53,27 @@ M.setup = function()
 end
 
 local function lsp_keymaps(bufnr)
-    local opts = { noremap = true, silent = true }
-    local keymap = vim.api.nvim_buf_set_keymap
-    keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-    keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-    keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-    keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-    keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-    keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-    keymap(bufnr, "n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
-    keymap(bufnr, "n", "<leader>li", "<cmd>LspInfo<cr>", opts)
-    keymap(bufnr, "n", "<leader>lI", "<cmd>LspInstallInfo<cr>", opts)
-    keymap(bufnr, "n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
-    keymap(bufnr, "n", "<leader>lk", "<cmd>lua vim.diagnostic.jump({count = 1, buffer = 0})<cr>", opts)
-    keymap(bufnr, "n", "<leader>lk", "<cmd>lua vim.diagnostic.jump({count = -1, buffer = 0})<cr>", opts)
-    keymap(bufnr, "n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
-    keymap(bufnr, "n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-    keymap(bufnr, "n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+    local opts = { noremap = true, silent = true, buffer = bufnr }
+    local keymap = vim.keymap.set
+    keymap("n", "gD", vim.lsp.buf.declaration, opts)
+    keymap("n", "gd", vim.lsp.buf.definition, opts)
+    keymap("n", "K", vim.lsp.buf.hover, opts)
+    keymap("n", "gI", vim.lsp.buf.implementation, opts)
+    keymap("n", "gr", vim.lsp.buf.references, opts)
+    keymap("n", "gl", vim.diagnostic.open_float, opts)
+    keymap("n", "<leader>lf", function() vim.lsp.buf.format { async = true } end, opts)
+    keymap("n", "<leader>li", "<cmd>LspInfo<cr>", opts)
+    keymap("n", "<leader>lI", "<cmd>LspInstallInfo<cr>", opts)
+    keymap("n", "<leader>la", vim.lsp.buf.code_action, opts)
+    keymap("n", "<leader>lj", function() vim.diagnostic.jump({ count = 1, buffer = 0 }) end, opts)
+    keymap("n", "<leader>lk", function() vim.diagnostic.jump({ count = -1, buffer = 0 }) end, opts)
+    keymap("n", "<leader>lr", vim.lsp.buf.rename, opts)
+    keymap("n", "<leader>ls", vim.lsp.buf.signature_help, opts)
+    keymap("n", "<leader>lq", vim.diagnostic.setloclist, opts)
 end
 
 M.on_attach = function(client, bufnr)
-    if client.name == "tsserver" then
-        client.server_capabilities.documentFormattingProvider = false
-    end
-
-    if client.name == "sumneko_lua" then
-        client.server_capabilities.documentFormattingProvider = false
-    end
-
     lsp_keymaps(bufnr)
-    local status_ok, illuminate = pcall(require, "illuminate")
-    if not status_ok then
-        return
-    end
-    illuminate.on_attach(client)
 end
 
 return M
